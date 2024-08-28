@@ -1,12 +1,10 @@
 PyMuPDF==1.24.9
 spacy==3.7.6
 spacy-transformers==1.3.5
-spacy-huggingface-hub>=0.0.10
-huggingface-hub==0.20.3
+huggingface-hub==0.24.5
 torch==2.4.0
 matplotlib==3.8.0
 pandas==2.2.2
 setuptools==68.2.2
 streamlit==1.32.2
-en-pipeline==0.0.0
 https://huggingface.co/Ezpizz55/en_pipeline/resolve/main/en_pipeline-any-py3-none-any.whl
