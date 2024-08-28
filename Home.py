@@ -21,16 +21,9 @@ def render_home():
     def load_model(model_path):
         return spacy.load(model_path)
 
-    # model_path = r'D:\TEL-U\SEMESTER 6\BRIN\project_NER\model-best'
-    # nlp = load_model(model_path)
-
     # Using spacy.load().
     import spacy
     nlp = spacy.load("en_pipeline")
-
-    # Importing as module.
-    import en_pipeline
-    nlp = en_pipeline.load()
 
     def highlight_text(text):
         doc = nlp(text)
