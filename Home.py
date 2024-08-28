@@ -17,13 +17,13 @@ def render_home():
         st.session_state.clear()
         st.session_state['file_type'] = file_type
 
-    @st.cache_resource
-    def load_model(model_path):
-        return spacy.load(model_path)
-
     # Using spacy.load().
     import spacy
     nlp = spacy.load("en_pipeline")
+
+    @st.cache_resource
+    def load_model():
+        return spacy.load("en_pipeline")
 
     def highlight_text(text):
         doc = nlp(text)
