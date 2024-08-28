@@ -4,8 +4,18 @@ import spacy
 from collections import Counter
 import fitz
 
+def load_huggingface_model():
+    try:
+        nlp = spacy.load("en_pipeline")
+        print("Model loaded successfully using spacy.load().")
+    except OSError:
+        import en_pipeline
+        nlp = en_pipeline.load()
+        print("Model loaded successfully using en_pipeline.load().")
+    
+    return nlp
+
 def render_home():
-    # Reset session state if file type changes
     if 'file_type' not in st.session_state:
         st.session_state['file_type'] = None
 
@@ -13,17 +23,15 @@ def render_home():
                          horizontal=True)
 
     if st.session_state['file_type'] != file_type:
-        # Reset session state
         st.session_state.clear()
         st.session_state['file_type'] = file_type
 
-    # Using spacy.load().
-    import spacy
-    nlp = spacy.load("en_pipeline")
+    # Load the Hugging Face model
+    nlp = load_huggingface_model()
 
     @st.cache_resource
     def load_model():
-        return spacy.load("en_pipeline")
+        return load_huggingface_model()
 
     def highlight_text(text):
         doc = nlp(text)
