@@ -8,3 +8,4 @@ matplotlib==3.8.0
 pandas==2.2.2
 setuptools==68.2.2
 streamlit==1.32.2
+https://huggingface.co/Ezpizz55/en_pipeline/resolve/main/en_pipeline-any-py3-none-any.whl
