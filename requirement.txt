@@ -1,0 +1,5 @@
+streamlit
+pandas
+spacy
+PyMuPDF==1.18.19
+matplotlib
